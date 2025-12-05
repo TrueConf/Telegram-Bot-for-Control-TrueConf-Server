@@ -1,0 +1,44 @@
+access_denied: "Only the owner can interact with their bot."
+error_oauth2: "⚠️ The <b>OAuth2</b> application is not configured correctly on server {}."
+found_forgotten_conf: "🔍 The following potentially forgotten conferences were found on server {}:\n"
+description_conf: |
+  <b>ID:</b> <a href="{5}/c/{0}">{0}</a>
+  <b>Name:</b> {2}
+  <b>Owner:</b> {3}
+  <b>Participants:</b> {1}
+  <b>Duration:</b> {4}
+  <a href="{5}/tools/real-time/{6}?a=cookies">
+  Advanced conference management</a>
+stop_conf: "\nTo end the conference, <u>tap its ID</u> below👇"
+no_forgotten_conf: "👍 There are no forgotten conferences on server {} that have been running for more than <b>1 hour</b>."
+time_forgotten_conf: "🕐 Specify the duration (in hours) of potential forgotten conferences to search for"
+one_status_on: "Running 🟢"
+one_status_off: "Stopped 🔴"
+status_on: "<b>Status</b> {}: Running 🟢"
+status_off: "<b>Status</b> {}: Stopped 🔴"
+online_user: "👥 Server {} currently has <b>{} online</b> users."
+no_online_user: "🤷‍♂️ There are no online users on server {}."
+back: "🔙 Back"
+stop_check_status: "❌ Disable continuous monitoring"
+started_check_status: |
+  <b>Server</b> {}: {}
+  
+  ✔ Continuous status monitoring is now <b>Enabled</b>.
+  <b>Timeout:</b> {} seconds
+  
+  <i>You will receive a notification when the server status changes.</i>
+start_check_status: "🔄 Enable continuous monitoring"
+stoped_check_status: | 
+  <b>Server</b> {}: {}
+  Continuous status monitoring has been <b>Disabled</b>.
+run_conf: "📞 The following conferences are currently running on server {}:\n"
+no_run_conf: "🤷‍♂️ There are no running conferences on server {}."
+select_server: "🌍 Select a server:"
+server_status: "🔄 Server status"
+show_run_conf: "⏳ Show running conferences"
+online_user_count: "👤 Number of online users"
+find_forgotten_conf: "🔍 Find forgotten conferences"
+server_selected: "Server {} selected. What would you like to do?"
+confirm_stop: "🛑 Yes, stop it"
+confirm_stop_message: "❗Are you sure you want to stop the conference <b>{}</b>?"
+connection_error: "❌ <b>Connection to server {} failed!</b>\nPlease check your network and server availability."

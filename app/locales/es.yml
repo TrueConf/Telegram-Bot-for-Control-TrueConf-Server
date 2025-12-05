@@ -1,0 +1,44 @@
+access_denied: "Solo el propietario puede comunicarse con su bot."
+error_oauth2: "⚠️ En el servidor {} la aplicación <b>OAuth2</b> no está configurada correctamente."
+found_forgotten_conf: "🔍 En el servidor {} se han encontrado las siguientes conferencias posiblemente olvidadas:\n"
+description_conf: |
+  <b>ID:</b> <a href="{5}/c/{0}">{0}</a>
+  <b>Nombre:</b> {2}
+  <b>Propietario:</b> {3}
+  <b>Cantidad de participantes:</b> {1}
+  <b>Duración:</b> {4}
+  <a href="{5}/tools/real-time/{6}?a=cookies">
+  Gestión avanzada de la conferencia</a>
+stop_conf: "\nPara finalizar la conferencia, <u>haga clic en su ID</u> abajo👇"
+no_forgotten_conf: "👍 No hay conferencias olvidadas en el servidor {} con una duración superior a <b>1 hora</b>."
+time_forgotten_conf: "🕐 Indique la duración (en horas) de las conferencias olvidadas para buscarlas"
+one_status_on: "En funcionamiento 🟢"
+one_status_off: "Detenido 🔴"
+status_on: "<b>Estado</b> {}: En funcionamiento 🟢"
+status_off: "<b>Estado</b> {}: Detenido 🔴"
+online_user: "👥 En el servidor {} hay <b>{} usuarios en línea</b>."
+no_online_user: "🤷‍♂️ No hay usuarios en línea en el servidor {}."
+back: "🔙 Atrás"
+stop_check_status: "❌ Desactivar la comprobación continua"
+started_check_status: |
+  <b>Servidor</b> {}: {}
+  
+  ✔ Comprobación continua de estado <b>Activada</b>.
+  <b>Tiempo de espera:</b> {} segundos
+  
+  <i>Cuando el estado del servidor cambie, recibirá un mensaje correspondiente.</i>
+start_check_status: "🔄 Activar la comprobación continua"
+stoped_check_status: |
+  <b>Servidor</b> {}: {}
+  Comprobación continua de estado <b>Desactivada</b>."
+run_conf: "📞 En el servidor {} están activas las siguientes conferencias:\n"
+no_run_conf: "🤷‍♂️ No hay conferencias activas en el servidor {}."
+select_server: "🌍 Seleccione un servidor:"
+server_status: "🔄 Estado del servidor"
+show_run_conf: "⏳ Mostrar conferencias activas"
+online_user_count: "👤 Cantidad de usuarios en línea"
+find_forgotten_conf: "🔍 Encontrar conferencias olvidadas"
+server_selected: 'Servidor {} seleccionado. ¿Qué se debe hacer ahora?'
+confirm_stop: "🛑 Sí, detener"
+confirm_stop_message: "❗¿Está seguro de que desea detener la conferencia <b>{}</b>?"
+connection_error: "❌ <b>No se pudo conectar al servidor {}!</b>\nVerifique su red y la disponibilidad de su servidor."

@@ -1,0 +1,44 @@
+access_denied: "Nur der Besitzer kann mit seinem Bot kommunizieren."
+error_oauth2: "⚠️ Auf dem Server {} ist die <b>OAuth2</b>-Anwendung nicht korrekt konfiguriert."
+found_forgotten_conf: "🔍 Auf dem Server {} wurden folgende möglicherweise vergessene Konferenzen gefunden:\n"
+description_conf: |
+  <b>ID:</b> <a href="{5}/c/{0}">{0}</a>
+  <b>Name:</b> {2}
+  <b>Besitzer:</b> {3}
+  <b>Teilnehmerzahl:</b> {1}
+  <b>Dauer:</b> {4}
+  <a href="{5}/tools/real-time/{6}?a=cookies">
+  Erweiterte Konferenzsteuerung</a>
+stop_conf: "\nUm die Konferenz zu beenden, <u>klicken Sie auf die ID</u> unten👇"
+no_forgotten_conf: "👍 Auf dem Server {} gibt es keine vergessenen Konferenzen, die länger als <b>1 Stunde</b> dauern."
+time_forgotten_conf: "🕐 Geben Sie die Dauer (in Stunden) der zu suchenden vergessenen Konferenzen an."
+one_status_on: "Läuft 🟢"
+one_status_off: "Gestoppt 🔴"
+status_on: "<b>Status</b> {}: Läuft 🟢"
+status_off: "<b>Status</b> {}: Gestoppt 🔴"
+online_user: "👥 Auf dem Server {} sind <b>{} Benutzer online</b>."
+no_online_user: "🤷‍♂️ Auf dem Server {} sind keine Benutzer online."
+back: "🔙 Zurück"
+stop_check_status: "❌ Deaktivieren Sie die kontinuierliche Überprüfung"
+started_check_status: |
+  <b>Server</b> {}: {}
+  
+  ✔ Kontinuierliche Statusüberprüfung <b>Aktiviert</b>.
+  <b>Timeout:</b> {} Sekunden
+  
+  <i>Wenn sich der Serverstatus ändert, erhalten Sie eine entsprechende Nachricht.</i>
+start_check_status: "🔄 Aktivieren Sie die kontinuierliche Überprüfung"
+stoped_check_status: |
+  <b>Server</b> {}: {}
+  Kontinuierliche Statusüberprüfung <b>Deaktiviert</b>."
+run_conf: "📞 Auf dem Server {} sind folgende Konferenzen aktiv:\n"
+no_run_conf: "🤷‍♂️ Auf dem Server {} sind keine aktiven Konferenzen."
+select_server: "🌍 Wählen Sie einen Server:"
+server_status: "🔄 Serverstatus"
+show_run_conf: "⏳ Zeigen Sie aktive Konferenzen"
+online_user_count: "👤 Anzahl der Online-Benutzer"
+find_forgotten_conf: "🔍 Vergessene Konferenzen finden"
+server_selected: 'Server {} wurde ausgewählt. Was soll getan werden?'
+confirm_stop: "🛑 Ja, stoppen"
+confirm_stop_message: "❗Möchten Sie die Konferenz <b>{}</b> wirklich stoppen?"
+connection_error: "❌ <b>Verbindung zum Server {} konnte nicht hergestellt werden!</b>\nÜberprüfen Sie Ihr Netzwerk und die Erreichbarkeit Ihres Servers."

@@ -1,0 +1,28 @@
+tg-api-token = "1234:example"
+tg-users-id = [12345, 12345]
+locale = "en"
+
+[servers]
+
+[servers."10.110.2.240"]
+ip = "10.110.2.240"
+client_id = ""
+client_secret = ""
+access_token = ""
+ssl_certificate = ""
+
+[servers."10.110.2.240".server_status]
+state = false
+timeout = 15
+
+
+[servers."video.example.net"]
+ip = "10.140.1.255"
+client_id = ""
+client_secret = "0"
+access_token = ""
+ssl_certificate = true
+
+[servers."video.example.net".server_status]
+state = false
+timeout = 15

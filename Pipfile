@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+httpx = "*"
+python-telegram-bot = "==13.15"
+urllib3 = ">=1.21.1,<1.27"
+tomlkit = "*"
+i18nice = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
