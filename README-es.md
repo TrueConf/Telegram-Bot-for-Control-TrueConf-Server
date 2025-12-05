@@ -19,7 +19,7 @@
         <img src="https://img.shields.io/badge/Discord-%235865F2.svg?&logo=discord&logoColor=white" />
     </a>
     <a href="#">
-        <img src="https://img.shields.io/github/stars/trueconf/trueconf-sdk-for-react-native?style=social" />
+        <img src="https://img.shields.io/github/stars/trueconf/Telegram-Bot-for-Control-TrueConf-Server?style=social" />
     </a>
 </p>
 
