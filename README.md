@@ -34,12 +34,10 @@
   <img src="assets/head_en.png" alt="Telegram Control Bot for TrueConf Server" width="800" height="auto">
 </p>
 
-The administrator of [TrueConf
-Server](https://trueconf.ru/products/tcsf/besplatniy-server-videoconferenciy.html)
+The administrator of [TrueConf Server](https://trueconf.ru/products/tcsf/besplatniy-server-videoconferenciy.html)
 can quickly access important server information using popular messengers, such
 as Telegram. To achieve this, you can create a bot that will retrieve the
-necessary data via the [TrueConf Server
-API](https://developers.trueconf.ru/api/server/). The bot can be hosted locally
+necessary data via the [TrueConf Server API](https://developers.trueconf.ru/api/server/). The bot can be hosted locally
 on your own server or on any dedicated machine.
 
 In this example, we will demonstrate how to create a Telegram bot and deploy it
@@ -49,12 +47,11 @@ implementation using Python. The proposed bot has the following capabilities:
 1. Checking server status (running/stopped).
 1. Retrieving the list of active conferences.
 1. Checking the number of online users.
-1. Searching for mistakenly active long-running conferences and stopping any of
-them.
+1. Finding and stopping long-running conferences that were left active by mistake.
 
-In the text below, mistakenly started conferences are referred to as "forgotten"
+In the following text, such mistakenly started conferences are referred to as "forgotten"
 for brevity, meaning they were not ended by the owner and moderators. For
-example, during a webinar, guests left, but the moderator minimized the client
+example, during a webinar, the guests left, but the moderator minimized the client
 application without stopping the event. It continues to run, and if recording
 was enabled, it unnecessarily occupies space on the SSD or HDD with a growing
 recording file.
@@ -63,7 +60,7 @@ For example, we consider the following conference as "forgotten":
 
 - it lasts longer than one hour;
 - only the owner or moderator remains in it;
-- It has participants, but none of them are moderators.
+- it has participants, but none of them are moderators.
 
 <div align="center"><img src="assets/example1.png" width="350"/></div>
 
@@ -71,8 +68,7 @@ For example, we consider the following conference as "forgotten":
 
 For the successful launch of the bot, two conditions must be met:
 
-- Each monitored server must be accessible by its IP address or DNS name on the
-PC where the bot is running.
+- Each monitored server must be accessible by its IP address or DNS name from the PC running the bot.
 - The PC with the bot must have internet access.
 
 > [!NOTE]
@@ -89,22 +85,20 @@ BotFather is the only bot that manages bots on Telegram. Read more in the
 To create a bot:
 
 1. Open [BotFather](http://t.me/BotFather) and click **Run** or **Start**.
-1. You will see a list of the bot's capabilities. You will need the `/newbot`
+1. A list of the bot's commands will appear. You will need the `/newbot`
 command. Click on it in the list or send a new message with `/newbot` to the
 bot.
 
-> [!TIP] In the future, you can access the list of available commands by using
-the `Menu` button (mobile version), `/` (desktop version), or simply by typing
-`/` in the message input field in the chat with BotFather.
+> [!TIP]
+> You can later, you can access the list of available commands by clicking the `Menu` button (mobile version), `/` (desktop version), or simply by typing `/` in the message input field in the chat with BotFather.
 
-Next, BotFather will prompt you to name the new bot. Come up with a name, for
-example, `TCS [name_org]`, where `[name_org]` is the name of your organization.
+BotFather will then ask you to choose a name for your new bot. Come up with a name, for example, `TCS [name_org]`, where `[name_org]` is the name of your organization.
 
-Now come up with a username for your bot. The name **must** include the word
+Now, choose a username for your bot. The name **must** include the word
 `bot`, as it is a requirement from Telegram, for example, `tcs_[name_org]_bot`.
 
 > [!NOTE]
-> Please note that the bot's name and its username are public identifiers that can be used to find it through global search.
+> Please note that the bot's name and its username are public identifiers that can be used to find it via global search.
 
 In response, you will receive a message containing information about the created
 bot and an access token for it via HTTP API in the following format:
@@ -116,10 +110,10 @@ bot and an access token for it via HTTP API in the following format:
 Click on the token in the message text to copy it to the clipboard. Then save it
 in a secure location, as you will need it later to use the bot.
 
-To access your bot settings, execute the `/mybots` command and select the
+To access your bot settings, use the `/mybots` command and select the
 appropriate username. A menu will open where you can:
 
-- Revoke the current token, and a new token is automatically generated;
+- revoke the current token, and a new token is automatically generated;
 - edit name, welcome message, description, image;
 - add commands.
 
@@ -127,8 +121,7 @@ Now that the bot is configured, you can proceed to launch it.
 
 ## Preparing the configuration file
 
-You will need to prepare a configuration file with the access data for your bot
-and server parameters in advance.
+First, you need to prepare a configuration file with the access data for your bot and server parameters.
 
 Copy the `settings.example.toml` file to a new file named `settings.toml`:
 
@@ -140,23 +133,19 @@ Now you need to correctly fill in this data structure.
 
 **tg-api-token** — Telegram HTTP API access token.
 
-**tg-users-id** — your numeric Telegram ID. Telegram ensures secure access to the
-bot using unique user IDs. Therefore, you will need to know your Telegram ID to
-receive a response from the bot. To obtain it, send any message to the bot
-[@userinfobot](http://t.me/userinfobot).
+**tg-users-id** — Your numeric Telegram ID. Telegram ensures secure access to the bot using unique user IDs. Therefore, you will need to know your Telegram ID to receive a response from the bot. To obtain it, send any message to the bot [@userinfobot](http://t.me/userinfobot).
 
 > [!TIP]
 > If you want multiple people to have access to the bot, you can enter their IDs separated by commas.
 
-**locale** — the language code in which the bot will respond. You can edit
+**locale** — The language code in which the bot will respond. You can edit
 phrases or add your translation in the `app/locales` folder.
 
-In `[servers.<server_name>]`, replace `<server_name>` with the preferred server
-name. It will be displayed in the button names:
+In `[servers.<server_name>]`, replace `<server_name>` with the preferred server name. It will be displayed in the button names:
 
 <div align="center"><img src="assets/example2.png" width="350"/></div>
 
-**ip** — FQDN or IP address of the server.
+**ip** — The FQDN or IP address of the server.
 
 **client_id** and **client_secret** will be available to you after creating an
 OAuth2 application. For instructions on how to create one, refer to [our
@@ -219,7 +208,7 @@ state = 0
 timeout = 15
 ```
 
-## Starting the bot
+## Launching the bot
 
 1. Install Python.
 1. Download the project. On the main page of the repository, click the **Code → Download ZIP** button and extract the downloaded archive.
@@ -246,7 +235,7 @@ pipenv run python3 main.py
 
 When the bot is successfully launched, the terminal will display the message **Bot is running…**
 
-## Running the Bot on Cloud Services
+## Deploying the Bot on Cloud Services
 
 You can run your bot not only on a local machine but also in the cloud, which is
 convenient for continuous operation and accessibility from anywhere. For this
@@ -267,5 +256,4 @@ the cloud with integration into the Microsoft ecosystem.
 - **Glitch** is a service for quick hosting and app development with a simple
 interface and GitHub integration.
 
-These services not only allow you to deploy a bot but also easily scale it and
-ensure its availability to users anywhere in the world.
+These services allow you not only to deploy a bot but also to scale it easily and ensure its availability to users anywhere in the world.
