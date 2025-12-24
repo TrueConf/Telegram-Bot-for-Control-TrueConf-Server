@@ -1,12 +1,11 @@
 <p align="center">
   <a href="https://trueconf.com" target="_blank" rel="noopener noreferrer">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
-      <img width="150" src="assets/logo.svg">
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TrueConf/.github/refs/heads/main/logos/logo-dark.svg">
+      <img width="150" alt="trueconf" src="https://raw.githubusercontent.com/TrueConf/.github/refs/heads/main/logos/logo.svg">
     </picture>
   </a>
 </p>
-
 <h1 align="center">Bot de Telegram para gestionar el servidor TrueConf</h1>
 
 <p align="center">Acceso al panel de administración desde cualquier parte del mundo a través de la integración de Telegram con TrueConf</p>
